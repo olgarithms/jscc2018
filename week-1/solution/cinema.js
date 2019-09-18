@@ -10,9 +10,9 @@ class Cinema {
     sellTicket(person) {
         let number;
         do {
-            number = Math.floor(Math.random() * this.numOfSeats) + 1;
-        } while (this.seats[number-1].isOccupied);
-        this.seats[number-1].giveSeat(person);
+            number = Math.floor(Math.random() * this.numOfSeats);
+        } while (this.seats[number].isOccupied);
+        this.seats[number].giveSeat(person);
     }
 }
 
@@ -40,7 +40,7 @@ class Person {
 }
 
 
-c = new Cinema('WTM Cinema', 5)
-p = new Person('Olga')
+let c = new Cinema('WTM Cinema', 5)
+let p = new Person('Olga')
 c.sellTicket(p)
 p.assignedSeat
